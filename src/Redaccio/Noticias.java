@@ -1,13 +1,13 @@
 package Redaccio;
 
-public class Noticia {
+public class Noticias extends Redaccio implements F1, Futbol, Basquet, Motociclisme, Tenis {
 
     private String titular;
     private String text;
     private double puntuacio;
     private double preu;
 
-    public Noticia(String titular, String text, double puntuacio, double preu, String competicio, String club, String jugador) {
+    public Noticias(String titular, String text, double puntuacio, double preu, String competicio, String club, String jugador) {
         this.titular = titular;
         this.text = text;
         this.puntuacio = puntuacio;
@@ -46,10 +46,11 @@ public class Noticia {
         this.preu = preu;
     }
 
-    public Noticia(String titular){
+    public Noticias(String titular){
         this.titular = titular;
         this.text = "";
         this.puntuacio = 0.0;
         this.preu = 0.0;
     }
+
 }

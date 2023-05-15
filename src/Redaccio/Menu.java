@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Menu {
     private static final ArrayList<Redactor> redactors = new ArrayList<>();
+    private static final ArrayList<Noticias> NOTICIAS = new ArrayList<>();
+    public Menu() {
+
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -48,6 +52,21 @@ public class Menu {
     }
 
     private static void eliminarNoticia() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Introdueix el titular de la Noticia a eliminar: ");
+        String titular = sc.nextLine();
+        boolean eliminat = false;
+        for (Noticias n : NOTICIAS) {
+            if (Redaccio.Noticia().equals(titular)) {
+                redactors.remove(redactor);
+                System.out.println("Redactor eliminat correctament.");
+                eliminat = true;
+                break;
+            }
+        }
+        if (!eliminat) {
+            System.out.println("No s'ha trobat cap redactor amb aquest DNI.");
+        }
     }
 
     public static void introduirRedactor() {
@@ -86,10 +105,10 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         System.out.print("Introdueix el DNI del redactor: ");
         String dni = sc.nextLine();
-        Redactor redactor = null;
+        String redactor = String.valueOf(redactors);
         for (Redactor r : redactors) {
             if (r.getDni().equals(dni)) {
-                redactor = r;
+                redactor = String.valueOf(r);
                 break;
             }
         }

@@ -1,11 +1,14 @@
 package Redaccio;
 
-public class Redactor {
+public class Redactor  extends Redaccio {
 
     String nom;
     String dni;
-    String sou;
+    double sou;
     public Redactor(String nom, String dni, double sou) {
+        this.nom = nom;
+        this.dni = dni;
+        this.sou = sou;
     }
 
     public String getNom() {
@@ -24,11 +27,13 @@ public class Redactor {
         this.dni = dni;
     }
 
-    public String getSou() {
+    public double getSou() {
         return sou;
     }
 
-    public void setSou(String sou) {
+    public void setSou(double sou) {
         this.sou = sou;
     }
+
+
 }
